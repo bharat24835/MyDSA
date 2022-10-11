@@ -3,7 +3,7 @@ package com.company;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class sum3closest {
+public class sum3closest0 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int []a = {-1,2,1,-4};

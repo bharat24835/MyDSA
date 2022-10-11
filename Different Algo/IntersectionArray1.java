@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class IntersectionArray {
+public  class IntersectionArray1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int [] nums1= {4,9,5};

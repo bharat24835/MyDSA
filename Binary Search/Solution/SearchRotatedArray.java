@@ -1,9 +1,9 @@
-package com.company;
+package com.company.Solution;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Practise1 {
+ class Practise1 {
     public static void main(String[] args) {
         Scanner in  = new Scanner(System.in);
         System.out.println(" Seach in rotated sorted array:");

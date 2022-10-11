@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Solution;
 
 import java.util.Scanner;
 
@@ -6,14 +6,8 @@ public class CeilingOfNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("enter the order of ascendign sorted array:");
-        int n= in.nextInt();
-        int []a= new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            a[i]= in.nextInt();
-        }
-        System.out.println("enter the target number:");
-        int target= in.nextInt();
+        int []a = {2,4,6,8,10,12,14};
+        int target = 4;
         int start=0;
 
         int mid=0;

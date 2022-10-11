@@ -3,7 +3,7 @@ package Practise;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Practise3 {
+public class WrongArrayPowerSetWithDuplicates {
     public static void main(String[] args) {
         System.out.println(" Now we make subset without the duplicate element : ");
         int []a = {1,2,2};

@@ -2,7 +2,7 @@ package New;
 
 import java.util.Arrays;
 
-public class new4 {
+public class MergeSort0 {
     public static void main(String[] args) {
         System.out.println("Here we wisht to solve inplace merge sort: ");
         int []a = {5,4,3,2};

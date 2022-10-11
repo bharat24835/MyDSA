@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class ReverseWord {
+public class ReverseWord0 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println(" Here we do so ");

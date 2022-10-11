@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.*;
 
-public class Sum3 {
+public class Sum31 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
             Set<List<Integer>> list = new HashSet<>();
