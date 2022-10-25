@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/2 pointer" isTestSource="false" packagePrefix="com.company" />
+      <sourceFolder url="file://$MODULE_DIR$/BackTraking" isTestSource="false" packagePrefix="LeetCodePractise" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Search" isTestSource="false" packagePrefix="com.company" />
+      <sourceFolder url="file://$MODULE_DIR$/Different Algo" isTestSource="false" packagePrefix="com.company" />
+      <sourceFolder url="file://$MODULE_DIR$/Pattern" isTestSource="false" packagePrefix="com.company" />
+      <sourceFolder url="file://$MODULE_DIR$/Recurssion" isTestSource="false" packagePrefix="Bharat" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting" isTestSource="false" packagePrefix="com.company" />
+      <sourceFolder url="file://$MODULE_DIR$/String" isTestSource="false" packagePrefix="com.company" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

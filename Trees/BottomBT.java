@@ -33,6 +33,10 @@ public class BottomBT {
                 map.put(line, node);
                 //list.add(node.val);
             }
+            else{
+                map.remove(line);
+                map.put(line,node);
+            }
 
             if(node.left!=null)  queue.offer(new PairS(node.left,line-1));
             if(node.right!=null) queue.offer(new PairS(node.right, line+1));
