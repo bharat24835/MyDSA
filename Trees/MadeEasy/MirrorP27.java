@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class DiameterBTP21 {
+public class MirrorP27 {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -21,10 +21,8 @@ public class DiameterBTP21 {
         root.right.right.left = new TreeNode(9);
         root.right.right.left.left = new TreeNode(10);
         root.right.right.left.right = new TreeNode(11);
-        System.out.println(LS(root));
-        System.out.println(" Width of trees is  : " + width(root) );
-
-
+        System.out.println( " Original series is : " + LS(root));
+        System.out.println("Mirror serires is :  "+ LS(mirror(root)));
     }
     public static ArrayList<ArrayList<Integer>> LS(TreeNode root){
         ArrayList<ArrayList<Integer>> output = new ArrayList<>();
@@ -53,26 +51,18 @@ public class DiameterBTP21 {
         return output;
     }
 
-    public  static  int width(TreeNode root){
-        int max = 0 ;
-
-        Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-
-        while(!q.isEmpty()){
-            int size = q.size();
-            int count =0;
-
-            for(int i = 0; i<size; i++){
-                TreeNode temp = q.poll();
-                count++;
-                if(temp.left!=null) q.offer(temp.left);
-                if(temp.right!=null) q.offer(temp.right);
-
-            }
-            max = Math.max(max, count);
-
+    public static  TreeNode mirror(TreeNode root){
+        TreeNode temp ;
+        if(root!=null){
+            mirror(root.left);
+            mirror(root.right);
+            // swap the pointers
+            temp = root.left;
+            root.left = root.right;
+            root.right = temp;
         }
-        return max;
+        return root;
+
     }
+
 }

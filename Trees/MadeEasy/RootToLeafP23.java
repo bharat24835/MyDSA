@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class DiameterBTP21 {
+public class RootToLeafP23 {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -21,9 +21,8 @@ public class DiameterBTP21 {
         root.right.right.left = new TreeNode(9);
         root.right.right.left.left = new TreeNode(10);
         root.right.right.left.right = new TreeNode(11);
-        System.out.println(LS(root));
-        System.out.println(" Width of trees is  : " + width(root) );
-
+        System.out.println(" Printing all the path from root to leaf:  that can be possibel using recursision : ");
+       Print(root, new int[100], 0);
 
     }
     public static ArrayList<ArrayList<Integer>> LS(TreeNode root){
@@ -52,27 +51,33 @@ public class DiameterBTP21 {
         }
         return output;
     }
+    public static void Print(TreeNode root, int[]p , int len){
+        if(root==null){
 
-    public  static  int width(TreeNode root){
-        int max = 0 ;
-
-        Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-
-        while(!q.isEmpty()){
-            int size = q.size();
-            int count =0;
-
-            for(int i = 0; i<size; i++){
-                TreeNode temp = q.poll();
-                count++;
-                if(temp.left!=null) q.offer(temp.left);
-                if(temp.right!=null) q.offer(temp.right);
-
-            }
-            max = Math.max(max, count);
-
+            return;
         }
-        return max;
+        p[len] = root.val;
+        len++;
+
+        if(root.left==null && root.right==null){
+            p(root,p,len);
+        }
+        else{
+            Print(root.left,p,len);
+            Print(root.right,p,len);
+        }
+
+
+
+
+
     }
+    public static void p (TreeNode root, int [] p , int len){
+      for(int i = 0 ; i<len ; i++){
+          System.out.print(p[i]);
+      }
+        System.out.println("");
+        return;
+    }
+
 }
