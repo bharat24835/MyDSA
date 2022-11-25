@@ -44,7 +44,11 @@ public class Max_Heap {
     public void display() throws Exception {
         if(this.count==0)
             throw new Exception("Erron is display program: ");
-        System.out.println(Arrays.toString(this.a));
+       for(int i =0 ; i<count; i++){
+           System.out.print( a[i] + " ");
+
+       }
+        System.out.println("");
     }
 
     private void swap(int[]a, int i , int j){
@@ -58,12 +62,12 @@ public class Max_Heap {
         int right = 2*i +2;
         int largest = Integer.MIN_VALUE ;
 
-        if(left < this.capacity && this.a[left] > this.a[i]){
+        if(left < this.count && this.a[left] > this.a[i]){
             largest = left;
         }
         else
             largest = i;
-        if(right < this.capacity && this.a[right] > a[largest])
+        if(right < this.count && this.a[right] > a[largest])
             largest = right ;
         if(largest!=i){
             swap(this.a ,i, largest );
@@ -94,6 +98,17 @@ public class Max_Heap {
             i = i/2;
         }
 
+    }
+
+    public int extractMax() throws Exception {
+        if(count <1){
+            throw new Exception("Head underflow");
+        }
+        int max = a[0];
+        a[0] = a[count-1];
+        count = count-1;
+        Max_Heapify(0);
+        return max;
     }
 
 
