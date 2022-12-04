@@ -1,16 +1,17 @@
 package Heaps;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Max_Heap {
-    public  int[]a;
-    public int capacity;
+    public List<Integer> a ;
+
     public int count;
 
-    public Max_Heap(int capacity) {
-        this.capacity = capacity;
+    public Max_Heap( ) {
         this.count=0;
-        this.a=new int[capacity];
+        this.a=new ArrayList<>();
     }
 
     public int Parent( int i ) throws Exception {
@@ -38,23 +39,20 @@ public class Max_Heap {
     public int GetMax( ) throws Exception {
         if(this.count==0)
             throw new Exception("Error in get max progarma; ");
-        return this.a[0];
+        return this.a.get(0);
     }
 
     public void display() throws Exception {
         if(this.count==0)
             throw new Exception("Erron is display program: ");
-       for(int i =0 ; i<count; i++){
-           System.out.print( a[i] + " ");
-
-       }
+        System.out.println(a);
         System.out.println("");
     }
 
-    private void swap(int[]a, int i , int j){
-        int temp = a[i];
-        a[i] =a[j];
-        a[j] = temp;
+    private void swap( int i , int j){
+        int temp = a.get(i);
+        a.set(i ,a.get(j));
+        a.set(j ,temp);
     }
 
     public void Max_Heapify(int i ){
@@ -62,15 +60,15 @@ public class Max_Heap {
         int right = 2*i +2;
         int largest = Integer.MIN_VALUE ;
 
-        if(left < this.count && this.a[left] > this.a[i]){
+        if(left < a.size() && this.a.get(left) > this.a.get(i)){
             largest = left;
         }
         else
             largest = i;
-        if(right < this.count && this.a[right] > a[largest])
+        if(right < a.size() && this.a.get(right) > a.get(largest))
             largest = right ;
         if(largest!=i){
-            swap(this.a ,i, largest );
+            swap(i, largest );
             Max_Heapify(largest);
         }
 
@@ -78,23 +76,20 @@ public class Max_Heap {
     }
 
     public void Build_Heap(){
-        for(int i = (this.capacity -1)/2; i>=0 ; i--){
+        for(int i = (this.a.size() -1)/2; i>=0 ; i--){
             Max_Heapify(i);
         }
     }
 
     public void insert(int value) throws Exception {
-        if(count == capacity){
-            throw new Exception(" Error in insert program: " );
 
-        }
         this.count +=1;
-        a[count-1] = value;
+        a.add(value);
         int i = count-1;
         // perlocate up algo
 
-        while(i >0 && a[i/2] < a[i]){
-            swap(a,i,i/2);
+        while(i >0 && a.get(i/2) < a.get(i)){
+            swap(i,i/2);
             i = i/2;
         }
 
@@ -104,9 +99,10 @@ public class Max_Heap {
         if(count <1){
             throw new Exception("Head underflow");
         }
-        int max = a[0];
-        a[0] = a[count-1];
-        count = count-1;
+        int max = a.get(0);
+        //a[0] = a[count-1];
+        a.set(0, a.get(a.size()-1));
+        a.remove(a.size()-1);
         Max_Heapify(0);
         return max;
     }

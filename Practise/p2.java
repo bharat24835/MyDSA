@@ -14,7 +14,8 @@ public class p2 {
         inner.add(4);
         System.out.println(" Inner before operation : " + inner);
         System.out.println(" Outer before operation : " + outer);
-        outer.add(new ArrayList<>(inner));
+        outer.add(inner);
+        System.out.println(" Inner added in outer: "  + outer);
         inner.remove(inner.size()-1);
         inner.add(5);
         System.out.println(" Inner after operation : " + inner);

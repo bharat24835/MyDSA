@@ -1,9 +1,14 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class ContainerWithMostWater {
     public static void main(String[] args) {
         int []a = {1,8,6,2,5,4,8,3,7};
         System.out.println(" Most water is : " + call(a));
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+
     }
     public static int call(int []a ){
         int max = Integer.MIN_VALUE;

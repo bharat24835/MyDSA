@@ -3,7 +3,7 @@ package Heaps;
 public class H1 {
     public static void main(String[] args) throws Exception {
         System.out.println(" Here we do some heap algo: " );
-        Max_Heap a  = new Max_Heap(5);
+        Max_Heap a  = new Max_Heap();
         a.insert(10);
         a.insert(120);
         a.insert(30);
