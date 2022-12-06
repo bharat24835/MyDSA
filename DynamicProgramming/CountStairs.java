@@ -5,9 +5,9 @@ public class CountStairs {
         int n = 4;
         // you can skip 1 , 2 jump steps at a time
         // count nummber of ways to reach n stairs
-        System.out.println("Answer by Recurssion: "  + call1(n));
-        System.out.println("Answer by Memoizaton: "  + call2(n));
-        System.out.println("Answer by Tabulation: "  + call3(n));
+        System.out.println("Answer by Recurssion : "  + call1(n));
+        System.out.println("Answer by Tabulation : "  + call2(n));
+        System.out.println("Answer by Space Optimization : "  + call3(n));
     }
     public static  int call1( int n){
         if(n==0)return 1;
