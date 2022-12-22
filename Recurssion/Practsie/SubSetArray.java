@@ -5,7 +5,7 @@ import java.util.List;
 
 public class SubSetArray {
     public static void main(String[] args) {
-        int []a = {1,2,3};
+        int []a = {1,2,2};
         List<List<Integer>> outer = new ArrayList<>();
         List<Integer> inner = new ArrayList<>();
         call(outer, inner , a , 0);
