@@ -22,9 +22,10 @@ public class PrintingPath {
     {
      if(row==matrix.length-1 && col==matrix[0].length-1)
      {
+         maze[row][col]=step;
         for (int []arr: maze)
         {
-            maze[row][col]=step;
+
             System.out.println(Arrays.toString(arr));
         }
          System.out.println(p);
