@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class SubsetMinAbsoluteSum {
     public static void main(String[] args) {
-        int[]a ={3,2,7};
-        int sum = 12;
+        int[]a ={1,2,2,3};
+        int sum = 8;
         System.out.println(" Minimum Absolute difference: " + call(a,sum));
     }
     public static int call( int[]a , int sum){
@@ -18,6 +18,7 @@ public class SubsetMinAbsoluteSum {
 
 
         boolean dummy = call2(a,tSum,dp);
+        // in this we are calling via tabulation
         for(boolean[] b : dp){
             System.out.println(Arrays.toString(b));
         }

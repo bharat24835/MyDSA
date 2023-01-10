@@ -54,18 +54,19 @@ public class KthLargestNumber {
 
          int pivit = a[mid];
 
-        while(start <= end){
+        while(start < end){
             while(a[start] < pivit) start++;
             while(a[end] > pivit) end--;
            if(start<=end)
-            swap(start,end,a);
-            start++;
-            end--;
+           {swap(start,end,a);
+              start++;
+            end--;}
         }
         System.out.println("Pivit Index is : " + mid);
         System.out.println("Pivit is : " + pivit);
         System.out.println(Arrays.toString(a));
-        return end;
+        System.out.println("");
+        return mid;
     }
     public static void swap( int i , int j , int[]a){
         int temp = a[i];
