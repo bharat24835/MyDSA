@@ -43,9 +43,9 @@ if(dp[i][target] != -1)return dp[i][target];
 //                dp[0][j]= 0;
         }
 
-        for(int i = 0 ; i<a.length; i++){
-            dp[i][0] = 1;
-        }
+//        for(int i = 0 ; i<a.length; i++){
+//            dp[i][0] = 1;
+//        }
 
         for(int i =1; i<a.length; i++){
             for(int j = 0 ; j<=target; j++){

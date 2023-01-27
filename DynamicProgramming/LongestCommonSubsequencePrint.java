@@ -1,0 +1,64 @@
+package DynamicProgramming;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class LongestCommonSubsequencePrint {
+    public static void main(String[] args) {
+        String s1 = "abcde";
+        String s2 = "bdgek";
+        System.out.println("Here we wish to print the Longest Common Subsequence: ");
+       // String ans ="";
+        int [][]a = call(s1,s2);
+        System.out.println("DP  arrary By tabulation  is : "  );
+        for(int []b: a){
+            System.out.println(Arrays.toString(b));
+        }
+        int  s = a[s1.length()][s2.length()];
+
+        StringBuilder ans  = new StringBuilder();
+
+        int i = s1.length();
+        int j= s2.length();
+        while( i> 0 && j> 0){
+            if(s1.charAt(i-1) == s2.charAt(j-1)){
+                ans.insert(0,s2.charAt(j-1));
+                i--;
+                j--;
+            }
+            else if(a[i][j-1] > a[i-1][j]){
+                j--;
+            }
+            else i--;
+
+        }
+        System.out.println("Common Longst subsequence is : " + ans);
+
+    }
+    public static int[][] call(String s1 , String s2){
+        int [][]dp = new int[s1.length()+1][s2.length()+1];
+
+        // declarieng base case
+        for(int i = 0 ; i<=s1.length(); i++) dp[i][0] =0;
+        for(int i = 0 ; i<=s2.length(); i++) dp[0][i] =0;
+
+        // matching condition
+        for( int i  =1 ; i<=s1.length(); i++){
+            for(int j =1 ; j<=s2.length(); j++){
+
+                // matching conditon
+                if(s1.charAt(i-1) == s2.charAt(j-1)){  // consequenc of index shitfitn algo
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                }
+                else{
+                    dp[i][j] =  0 + Math.max(dp[i-1][j] , dp[i][j-1]);
+                }
+
+            }
+        }
+        return dp;
+
+
+    }
+
+}
