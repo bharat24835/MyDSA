@@ -1,25 +1,26 @@
 package Practise;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class p2 {
     public static void main(String[] args) {
-        List<List<Integer>> outer = new ArrayList<>();
-        List<Integer> inner = new ArrayList<>();
+        String s1 = "mississippi";
+        String s2 = "issip";
+        int ans =  call (0,0,s1,s2);
+        System.out.println("Answer is : " + ans);
 
-        inner.add(1);
-        inner.add(2);
-        inner.add(3);
-        inner.add(4);
-        System.out.println(" Inner before operation : " + inner);
-        System.out.println(" Outer before operation : " + outer);
-        outer.add(inner);
-        System.out.println(" Inner added in outer: "  + outer);
-        inner.remove(inner.size()-1);
-        inner.add(5);
-        System.out.println(" Inner after operation : " + inner);
-        System.out.println(" Outer after operation : " + outer);
+    }
+    public static int call(int i , int j , String s1, String s2){
+        if(j == s2.length())return i - s2.length();
+        if(i == s1.length()) return -1;
 
+        // match
+        int first = -1;
+        if(s1.charAt(i) == s2.charAt(j))
+             first =  call(i+1, j+1, s1,s2);
+
+        int second = call(i+1,0,s1,s2);
+
+        if(first !=-1 && second !=-1) return Math.min(first,second);
+        if(first != -1) return first;
+        else return second;
     }
 }
