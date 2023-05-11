@@ -6,8 +6,8 @@ public class CeilingOfNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("enter the order of ascendign sorted array:");
-        int []a = {2,4,6,8,10,12,14};
-        int target = 4;
+        int []a = {1,2,3,4,5};
+        int target = 7;
         int start=0;
 
         int mid=0;
